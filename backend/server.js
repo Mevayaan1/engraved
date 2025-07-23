@@ -25,8 +25,9 @@ app.use("/api/products", productRoutes);
 app.use('/api/upload', uploadRoutes);
 
 mongoose.connect(process.env.MONGO_URI)
-  .then(() => {
+  .then((conn) => {
     console.log("✅ MongoDB connected");
     app.listen(port, () => console.log(`🚀 Server running at http://localhost:${port}`));
+    console.log(`DB Name: ${conn.connection.name}`);
   })
   .catch((err) => console.error("❌ MongoDB connection failed:", err));
