@@ -1,0 +1,40 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "title": "Handcrafted Inlay Box",
+      "slug": "handcrafted-inlay-box",
+      "price": 1999,
+      "originalPrice": 2499,
+      "rating": 5,
+      "reviewCount": 12,
+      "isOnSale": true,
+      "image": "./src/assets/img/products/product1.webp",
+      "hoverImage": "./src/assets/img/products/product1-hover.webp"
+    },
+    {
+      "id": "2",
+      "title": "Mother of Pearl Tray",
+      "slug": "mother-of-pearl-tray",
+      "price": 2499,
+      "originalPrice": 2999,
+      "rating": 4,
+      "reviewCount": 8,
+      "isOnSale": true,
+      "image": "./src/assets/img/products/product2.webp",
+      "hoverImage": "./src/assets/img/products/product2-hover.webp"
+    },
+    {
+      "id": "3",
+      "title": "Elegant Pearl Serving Dish",
+      "slug": "elegant-pearl-serving-dish",
+      "price": 2499,
+      "originalPrice": 2699,
+      "rating": 4,
+      "reviewCount": 6,
+      "isOnSale": false,
+      "image": "./src/assets/img/products/product3.webp",
+      "hoverImage": "./src/assets/img/products/product3-hover.webp"
+    }
+  ]
+}

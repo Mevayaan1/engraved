@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Handcrafted Inlay Box",
+    "slug": "handcrafted-inlay-box",
+    "price": 1999,
+    "originalPrice": 2499,
+    "description": "A beautifully handcrafted bone inlay box perfect for jewelry or décor.",
+    "image": "./src/assets/img/products/product1.webp",
+    "hoverImage": "./src/assets/img/products/product1-hover.webp",
+    "material": "Bone Inlay",
+    "type": "Box",
+    "featured": true
+  },
+  {
+    "name": "Mother of Pearl Tray",
+    "slug": "mother-of-pearl-tray",
+    "price": 2499,
+    "originalPrice": 2999,
+    "description": "Elegant serving tray made with delicate mother of pearl inlay work.",
+    "image": "./src/assets/img/products/product2.webp",
+    "hoverImage": "./src/assets/img/products/product2-hover.webp",
+    "material": "Mother of Pearl",
+    "type": "Tray",
+    "featured": true
+  },
+  {
+    "name": "Elegant Pearl Serving Dish",
+    "slug": "elegant-pearl-serving-dish",
+    "price": 2499,
+    "originalPrice": 2699,
+    "description": "Luxury dish handcrafted with pearl inlay for fine dining aesthetics.",
+    "image": "./src/assets/img/products/product3.webp",
+    "hoverImage": "./src/assets/img/products/product3-hover.webp",
+    "material": "Pearl Inlay",
+    "type": "Dish",
+    "featured": false
+  }
+]
