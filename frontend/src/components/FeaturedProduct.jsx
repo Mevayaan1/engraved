@@ -6,8 +6,8 @@ import ProductCard from "./ProductCard";
 const FeaturedProducts = () => {
   const [products, setProducts] = useState([]);
 
- useEffect(() => {
-    axios.get('http://localhost:5000/api/products/featured/? limit=3')
+  useEffect(() => {
+    axios.get(`${import.meta.env.VITE_API_BASE_URL}api/products/featured/? limit=3`)
       .then(res => setProducts(res.data))
       .catch(err => console.error("Error fetching featured products:", err));
   }, []);
