@@ -11,7 +11,7 @@ const app = express();
 
 const allowedOrigins = [
   'http://localhost:5173',
-  "https://engraved-gamma.vercel.app.",
+  "https://engraved-gamma.vercel.app",
 ];
 // CORS Configuration 
 app.use(cors({
