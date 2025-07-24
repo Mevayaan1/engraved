@@ -35,7 +35,7 @@ const AdminDashboard = () => {
     formData.append("image", file);
 
     try {
-      const res = await fetch(`${import.meta.env.API_BASE_URL}/api/upload`, {
+      const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/upload`, {
         method: "POST",
         body: formData,
       });
