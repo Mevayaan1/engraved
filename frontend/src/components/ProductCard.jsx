@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Star } from "lucide-react"; // For rating stars (lucide-react)
+import { Star } from "lucide-react"; 
 
 const ProductCard = ({ product }) => {
   const {
