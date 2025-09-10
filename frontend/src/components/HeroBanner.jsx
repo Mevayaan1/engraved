@@ -1,13 +1,16 @@
 // components/HeroBanner.jsx
+
+import HeroImg from "../assets/img/Hero2.webp";
+
 const HeroBanner = () => {
   return (
     <div className="relative z-0 h-[80vh] w-full">
       <img
-        src="./src/assets/img/Hero2.webp"
+        src={HeroImg}
         alt="Hero Background"
         className="w-full h-full object-cover"
       />
-      <div className="absolute inset-0 bg-black/10" />
+      <div className="absolute inset-0 bg-black/10"/>
 
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-[#3C5A4C]">
         <p className="uppercase text-xs tracking-widest mb-2">

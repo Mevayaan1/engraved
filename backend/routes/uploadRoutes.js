@@ -11,6 +11,7 @@ router.post('/', upload.single('image'), async (req, res) => {
   try {
     const result = await cloudinary.uploader.upload(req.file.path, {
       folder: 'engraved-by-amarts',
+      
     });
 
     fs.unlinkSync(req.file.path); // delete the uploaded file locally

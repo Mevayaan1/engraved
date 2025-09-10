@@ -21,7 +21,7 @@ const Shop = () => {
         setLoading(false);
       }
     };
-
+ 
     fetchProducts();
   }, []);
 
