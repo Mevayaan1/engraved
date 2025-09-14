@@ -1,1 +1,28 @@
 @import "tailwindcss";
+
+@layer utilities {
+  .shadow-bottom {
+    box-shadow: 0 4px 6px -3px rgba(0, 0, 0, 0.1);
+  }
+
+  .shadow-bottom-lg {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  }
+}
+
+
+/* scroll bar  */
+
+/* src/index.css */
+::-webkit-scrollbar {
+  width: 6px; /* thinner scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #f9f9f9; /* light background */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #c1c1c1; /* gray handle */
+  border-radius: 9999px; /* rounded */
+}

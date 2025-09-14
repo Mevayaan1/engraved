@@ -40,7 +40,10 @@ const Navbar = () => {
         <div className="flex items-center gap-4 text-[#3C5A4C]">
           <Link to="/account" className="text-sm font-medium">Account</Link>
           <Search className="w-5 h-5 cursor-pointer hover:text-[#5c7b69]" />
+          <Link to="/cart">
           <ShoppingBag className="w-5 h-5 cursor-pointer hover:text-[#5c7b69]" />
+          </Link>
+          
 
           {/* Mobile Menu Toggle Button */}
           <button
