@@ -1,31 +1,37 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import Navbar from "../components/Navbar";
+import { CartContext } from "@/context/CartContext";
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
-  const cartItems = [
-    {
-      id: 1,
-      title: "Slim Fit Casual Shirt",
-      desc: "Button-Down Collar & Placket",
-      price: 85,
-      size: "XL",
-      color: "Maroon",
-      quantity: 1,
-      image: "https://images.pexels.com/photos/10545937/pexels-photo-10545937.jpeg",
-    },
-    {
-      id: 2,
-      title: "Printed Straight Kurtas",
-      desc: "Digital Printed With Yoke Embroidered",
-      price: 68,
-      size: "L",
-      color: "Green",
-      quantity: 1,
-      image: "https://images.pexels.com/photos/10545937/pexels-photo-10545937.jpeg",
-    },
-  ];
+  const {cart = [], removeFromCart } = useContext(CartContext);
+  const navigate = useNavigate();
+  console.log(CartContext)
 
-  const subtotal = cartItems.reduce(
+  useEffect(() => {
+    if(!cart) navigate("/login");
+  }, [cart, navigate]);
+
+  if(!cart || cart.length === 0)
+    return (
+    <>
+        <Navbar />
+        <section className="min-h-screen flex flex-col items-center justify-center">
+          <h1 className="text-2xl font-semibold mb-4">Your Cart is Empty 🛒</h1>
+          <button
+            onClick={() => navigate("/shop")}
+            className="bg-[#234946] text-white px-5 py-2 rounded hover:bg-[#1b3736]"
+          >
+            Continue Shopping
+          </button>
+        </section>
+    </>
+
+    );
+
+
+
+  const subtotal = cart.reduce(
     (sum, item) => sum + item.price * item.quantity,
     0
   );
@@ -33,7 +39,7 @@ const Cart = () => {
   const tax = 0;
   const shipping = 0;
   const total = subtotal - discount + tax + shipping;
-
+  
   return (
     <>
       <Navbar />
@@ -53,25 +59,25 @@ const Cart = () => {
 
             {/* Items */}
             <div className="space-y-6">
-              {cartItems.map((item) => (
+              {cart.map((item) => (
                 <div
-                  key={item.id}
+                  key={item._id}
                   className="flex items-center justify-between shadow-bottom pb-4"
                 >
                   {/* Left Product Info */}
                   <div className="flex items-center gap-4">
                     <img
-                      src={item.image}
-                      alt={item.title}
+                      src={item.product.image}
+                      alt={item.product.title}
                       className="w-40 h-40 rounded-lg object-cover"
                     />
                     <div>
-                      <h3 className="font-semibold">{item.title}</h3>
-                      <p className="text-sm text-gray-500">{item.desc}</p>
+                      <h3 className="font-semibold">{item.product.title}</h3>
+                      <p className="text-sm text-gray-500">{item.product.desc}</p>
                       <p className="text-sm text-gray-500">
                         Size: {item.size} | Color: {item.color}
                       </p>
-                      <p className="font-semibold mt-1">${item.price}</p>
+                      <p className="font-semibold mt-1">${item.product.price}</p>
                     </div>
                   </div>
 
@@ -121,8 +127,10 @@ const Cart = () => {
               <span>${total.toFixed(2)}</span>
             </div>
 
-            <button className="w-full bg-[#B0C4C4] text-white py-3 rounded-xl hover:bg-[#234946] mb-3">
-              Proceed to Checkout
+            <button 
+              onClick={() => navigate("/checkout")}
+              className="w-full bg-[#B0C4C4] text-white py-3 rounded-xl hover:bg-[#234946] mb-3">
+                Proceed to Checkout
             </button>
 
             <p className="text-xs text-gray-500 mb-3">

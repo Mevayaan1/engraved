@@ -1,6 +1,6 @@
 // components/HeroBanner.jsx
 
-import HeroImg from "../assets/img/store-img.png";
+import HeroImg from "../assets/img/hero/store-img.png";
 
 const HeroBanner = () => {
   return (

@@ -1,10 +1,12 @@
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { CartContext } from "@/context/CartContext";
 
 const ProductDetail = () => {
   const { slug } = useParams();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
+  const { addToCart } = useContext(CartContext);
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -66,11 +68,13 @@ const ProductDetail = () => {
         </p>
 
         <button
+          onClick={() => addToCart(product._id,1)}
           className="bg-[#234946] text-white px-5 py-2 rounded hover:bg-[#1b3736]"
           disabled={stock === 0}
         >
           {stock > 0 ? "Add to Cart" : "Out of Stock"}
         </button>
+        
       </div>
     </div>
   );
